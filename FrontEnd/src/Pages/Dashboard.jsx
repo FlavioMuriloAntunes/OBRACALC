@@ -21,8 +21,9 @@ const Dashboard = () => {
     fetchOrcamentos();
   }, []);
 
+  // 🔄 Ao clicar no orçamento, redireciona para o formulário de cadastro de ambiente
   const handleClick = (id) => {
-    navigate(`/atualizar/${id}`);
+    navigate(`/cadastrarAmbiente/${id}`);
   };
 
   return (
@@ -33,30 +34,60 @@ const Dashboard = () => {
 
       <main className="listar-page">
         <h2>📊 Orçamentos</h2>
-        <p>Clique em um orçamento para atualizá-lo.</p>
+        <p>Clique em um orçamento para cadastrar os ambientes.</p>
 
         <table>
           <thead>
             <tr>
-              <th>ID</th>
               <th>Cliente</th>
               <th>Valor (R$)</th>
-              <th>Descrição</th>
+              <th>Data</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            {orcamentos.map((orc) => (
-              <tr
-                key={orc.id}
-                onClick={() => handleClick(orc.id)}
-                style={{ cursor: "pointer" }}
-              >
-                <td>{orc.id}</td>
-                <td>{orc.clientenome || "—"}</td>
-                <td>{orc.valor ? orc.valor.toFixed(2) : "0.00"}</td>
-                <td>{orc.descricao || "—"}</td>
+            {orcamentos.length > 0 ? (
+              orcamentos.map((orc) => (
+                <tr
+                  key={orc.id}
+                  onClick={() => handleClick(orc.id)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <td>{orc.clientenome || "—"}</td>
+                  <td>
+                    {orc.valor
+                      ? `R$ ${parseFloat(orc.valor).toFixed(2)}`
+                      : "R$ 0,00"}
+                  </td>
+                  <td>
+                    {orc.data
+                      ? new Date(orc.data).toLocaleDateString("pt-BR")
+                      : "—"}
+                  </td>
+                  <td>
+                    <span
+                      style={{
+                        color:
+                          orc.status === "Aprovado"
+                            ? "green"
+                            : orc.status === "Recusado"
+                            ? "red"
+                            : "orange",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {orc.status || "—"}
+                    </span>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="4" style={{ textAlign: "center", padding: "10px" }}>
+                  Nenhum orçamento encontrado.
+                </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </main>

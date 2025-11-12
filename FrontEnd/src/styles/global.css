@@ -1,137 +1,325 @@
-/* ======= ESTILOS APRIMORADOS PARA A TELA DE CADASTRO ======= */
+/* ======= DASHBOARD - ESTILOS GERAIS ======= */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f7f9fb;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
 
-/* Contêiner da Página */
+/* ======= MENU LATERAL ======= */
+.dashboard-menu,
+.menu-box {
+  width: 250px;
+  background: linear-gradient(180deg, #004aad, #0073e6);
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-box {
+  background: #0a5da6;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.menu-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.menu-subtitle {
+  font-size: 1rem;
+  color: #c0dfff;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-buttons button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.menu-buttons button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
+.listar-page {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+.listar-page h2 {
+  font-size: 1.8rem;
+  color: #004aad;
+  margin-bottom: 0.5rem;
+}
+
+.listar-page p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* ======= FORMULÁRIO PADRÃO ======= */
 .page {
   flex: 1;
-  padding: 3rem 4rem; /* Mais padding para maior conforto visual */
+  padding: 3rem 4rem;
   overflow-y: auto;
-  background-color: #f9fbfd;
+  background-color: #f5f8fc;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   box-shadow: -4px 0 12px rgba(0, 0, 0, 0.05);
   animation: fadeIn 0.5s ease;
-  
-  /* Centralização */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Título da Página */
+/* ======= ESTILOS DO FORMULÁRIO ======= */
 .page h2 {
-  font-size: 2rem; /* Título maior */
+  font-size: 2rem;
   font-weight: 700;
   color: #004aad;
   margin-bottom: 2rem;
   padding-bottom: 0.5rem;
-  border-bottom: 3px solid #bbdefb; /* Borda mais grossa e suave */
+  border-bottom: 3px solid #bbdefb;
   width: 100%;
   max-width: 600px;
   text-align: center;
 }
 
-/* Estilo do Formulário (O Card de Cadastro) */
-.page form {
+.page form,
+.form-ambientes,
+.resumo-orcamento {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Mais espaço entre os campos */
-  
-  background: #f5f5f5; /* Fundo cinza suave em vez de branco */
+  gap: 20px;
+  background: #ffffff;
   padding: 40px;
-  border-radius: 16px; /* Cantos mais arredondados */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra mais suave e elevada */
-  
-  max-width: 600px; 
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 650px;
   width: 100%;
+  margin-top: 30px;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
-/* Estilo para as Labels */
 .page label {
   font-weight: 600;
-  color: #333; /* Cor mais escura para melhor legibilidade */
-  margin-top: 0;
+  color: #333;
   font-size: 1rem;
 }
 
-/* Estilo para os Inputs e Textareas */
 .page input[type="text"],
 .page input[type="number"],
+.page input[type="date"],
+.page input[type="email"],
+.page select,
 .page textarea {
-  padding: 14px 18px; /* Mais padding nos inputs */
-  border: 2px solid #e0e0e0; /* Borda cinza clara e um pouco mais grossa */
-  border-radius: 10px; /* Cantos mais suaves */
+  padding: 14px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
   font-size: 1rem;
   color: #333;
-  background-color: #f9f9f9; /* Fundo levemente cinza para inputs */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
 }
 
 .page input:focus,
+.page select:focus,
 .page textarea:focus {
-  border-color: #1565c0; /* Azul médio no foco */
-  box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.2); /* Sombra de foco azul */
+  border-color: #1565c0;
+  box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.2);
   background-color: #fff;
   outline: none;
 }
 
-/* Estilo para o Textarea */
-.page textarea {
-  min-height: 150px;
+/* ======= ETAPA 2 — AMBIENTES ======= */
+.form-ambientes {
+  background: linear-gradient(to bottom right, #ffffff, #f6faff);
+  border: 1px solid #e3f2fd;
+  box-shadow: 0 8px 20px rgba(0, 74, 173, 0.08);
 }
 
-/* Estilo para o Botão "Salvar" */
-.page button[type="submit"] {
+.ambiente-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  background: #f8fbff;
+  border: 1.5px solid #dce8fa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.ambiente-item:hover {
+  background: #f1f7ff;
+  border-color: #bbdefb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 74, 173, 0.08);
+}
+
+.ambiente-item input[name="nomeAmbiente"] {
+  width: 70%;
+}
+
+.ambiente-item input[name="metragem"] {
+  width: 40%;
+}
+
+/* ======= CORREÇÃO DE TAMANHO DOS CAMPOS DE AMBIENTE ======= */
+.page .form-ambientes .ambiente-item input[name="nomeAmbiente"] {
+  width: 60% !important;
+  max-width: 380px;
+}
+
+.page .form-ambientes .ambiente-item input[name="metragem"] {
+  width: 35% !important;
+  max-width: 180px;
+}
+
+/* ======= BOTÕES ======= */
+.page button {
   background-color: #004aad;
-  color: white;
-  padding: 14px 25px;
+  color: #fff;
+  padding: 12px 20px;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: 700; /* Mais negrito */
-  margin-top: 15px;
-  box-shadow: 0 4px 10px rgba(0, 74, 173, 0.3); /* Sombra no botão */
-  transition: all 0.3s ease;
-}
-
-.page button[type="submit"]:hover {
-  background-color: #1565c0;
-  transform: translateY(-3px); /* Efeito de "levantar" */
-  box-shadow: 0 8px 15px rgba(0, 74, 173, 0.4);
-}
-
-/* Estilo para Mensagens de Status (Melhor feedback) */
-.page p {
-  padding: 15px 20px;
-  border-radius: 10px;
+  font-size: 1rem;
   font-weight: 600;
-  margin-top: 20px;
-  max-width: 600px;
-  text-align: center;
-  
-  /* Estilo base para mensagens */
-  background-color: #eef4ff; 
-  color: #004aad;
-  border: 1px solid #bbdefb;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 74, 173, 0.25);
+  transition: all 0.2s ease;
 }
 
-/* Estilo para mensagem de Sucesso */
-.page p.success {
-    background-color: #e8f5e9; /* Verde claro */
-    color: #388e3c; /* Verde escuro */
-    border-color: #c8e6c9;
+.page button:hover {
+  background-color: #1565c0;
+  transform: translateY(-2px);
 }
 
-/* Estilo para mensagem de Erro */
-.page p.error {
-    background-color: #ffebee; /* Vermelho claro */
-    color: #d32f2f; /* Vermelho escuro */
-    border-color: #ffcdd2;
+/* ======= TABELAS ======= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Animação de entrada suave */
+thead {
+  background-color: #004aad;
+  color: #fff;
+}
+
+thead th {
+  text-align: left;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e8e8e8;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #eef5ff;
+}
+
+tbody td {
+  padding: 12px 18px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* ======= SCROLL E AJUSTES ======= */
+.listar-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.listar-page::-webkit-scrollbar-thumb {
+  background-color: #004aad;
+  border-radius: 10px;
+}
+
+/* ======= ANIMAÇÃO ======= */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 900px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .dashboard-menu, .menu-box {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+
+  .listar-page {
+    padding: 1.5rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .page h2 {
+    font-size: 1.6rem;
+  }
+
+  .page form,
+  .form-ambientes,
+  .resumo-orcamento {
+    padding: 25px;
+  }
+
+  .ambiente-item input[name="nomeAmbiente"],
+  .ambiente-item input[name="metragem"] {
+    width: 100% !important;
+  }
 }
