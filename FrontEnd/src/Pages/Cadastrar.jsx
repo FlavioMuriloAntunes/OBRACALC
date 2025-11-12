@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/global.css";
+import "../components/Menu.css";
 
 const Cadastrar = () => {
   const [clienteNome, setClienteNome] = useState("");

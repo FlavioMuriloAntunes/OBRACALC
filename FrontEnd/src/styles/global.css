@@ -1,142 +1,137 @@
-/* ======= ESTILOS GERAIS ======= */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 0;
-}
+/* ======= ESTILOS APRIMORADOS PARA A TELA DE CADASTRO ======= */
 
-/* ======= CONTAINERS DE PÁGINA ======= */
-.page,
-.listar-page {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  padding: 40px;
-  margin: 60px auto;
-}
-
+/* Contêiner da Página */
 .page {
-  max-width: 600px;
-}
-
-.listar-page {
-  max-width: 900px;
-}
-
-/* ======= TÍTULOS ======= */
-h2 {
-  text-align: center;
-  color: #2c3e50;
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-/* ======= FORMULÁRIOS ======= */
-form {
+  flex: 1;
+  padding: 3rem 4rem; /* Mais padding para maior conforto visual */
+  overflow-y: auto;
+  background-color: #f9fbfd;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease;
+  
+  /* Centralização */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
 }
 
-label {
-  font-weight: 600;
-  color: #34495e;
-}
-
-input,
-textarea {
-  padding: 12px 14px;
-  border: 1px solid #ccd1d9;
-  border-radius: 10px;
-  font-size: 15px;
-  outline: none;
-  transition: all 0.2s ease-in-out;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
-}
-
-textarea {
-  resize: none;
-  height: 120px;
-}
-
-/* ======= TABELAS ======= */
-table {
+/* Título da Página */
+.page h2 {
+  font-size: 2rem; /* Título maior */
+  font-weight: 700;
+  color: #004aad;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #bbdefb; /* Borda mais grossa e suave */
   width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 16px;
+  max-width: 600px;
+  text-align: center;
 }
 
-th,
-td {
-  padding: 14px;
-  border-bottom: 1px solid #ddd;
+/* Estilo do Formulário (O Card de Cadastro) */
+.page form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Mais espaço entre os campos */
+  
+  background: #f5f5f5; /* Fundo cinza suave em vez de branco */
+  padding: 40px;
+  border-radius: 16px; /* Cantos mais arredondados */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra mais suave e elevada */
+  
+  max-width: 600px; 
+  width: 100%;
 }
 
-th {
-  background-color: #3498db;
-  color: #fff;
+/* Estilo para as Labels */
+.page label {
   font-weight: 600;
-  border-radius: 8px 8px 0 0;
+  color: #333; /* Cor mais escura para melhor legibilidade */
+  margin-top: 0;
+  font-size: 1rem;
 }
 
-tbody td {
-  color: #34495e;
+/* Estilo para os Inputs e Textareas */
+.page input[type="text"],
+.page input[type="number"],
+.page textarea {
+  padding: 14px 18px; /* Mais padding nos inputs */
+  border: 2px solid #e0e0e0; /* Borda cinza clara e um pouco mais grossa */
+  border-radius: 10px; /* Cantos mais suaves */
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9; /* Fundo levemente cinza para inputs */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
 }
 
-tr:hover {
-  background-color: #f1f1f1;
-  transition: background-color 0.2s ease-in-out;
+.page input:focus,
+.page textarea:focus {
+  border-color: #1565c0; /* Azul médio no foco */
+  box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.2); /* Sombra de foco azul */
+  background-color: #fff;
+  outline: none;
 }
 
-/* ======= BOTÕES ======= */
-button {
-  padding: 12px 16px;
-  background-color: #3498db;
+/* Estilo para o Textarea */
+.page textarea {
+  min-height: 150px;
+}
+
+/* Estilo para o Botão "Salvar" */
+.page button[type="submit"] {
+  background-color: #004aad;
   color: white;
+  padding: 14px 25px;
   border: none;
   border-radius: 10px;
-  font-size: 16px;
-  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  font-size: 1.1rem;
+  font-weight: 700; /* Mais negrito */
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(0, 74, 173, 0.3); /* Sombra no botão */
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #2980b9;
-  transform: scale(1.02);
+.page button[type="submit"]:hover {
+  background-color: #1565c0;
+  transform: translateY(-3px); /* Efeito de "levantar" */
+  box-shadow: 0 8px 15px rgba(0, 74, 173, 0.4);
 }
 
-/* ======= PARÁGRAFOS ======= */
-p {
+/* Estilo para Mensagens de Status (Melhor feedback) */
+.page p {
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 20px;
+  max-width: 600px;
   text-align: center;
-  color: #7f8c8d;
-  font-size: 16px;
+  
+  /* Estilo base para mensagens */
+  background-color: #eef4ff; 
+  color: #004aad;
+  border: 1px solid #bbdefb;
 }
 
-/* ======= RESPONSIVIDADE ======= */
-@media (max-width: 768px) {
-  .page,
-  .listar-page {
-    margin: 30px 10px;
-    padding: 25px;
-  }
+/* Estilo para mensagem de Sucesso */
+.page p.success {
+    background-color: #e8f5e9; /* Verde claro */
+    color: #388e3c; /* Verde escuro */
+    border-color: #c8e6c9;
+}
 
-  table {
-    font-size: 14px;
-  }
+/* Estilo para mensagem de Erro */
+.page p.error {
+    background-color: #ffebee; /* Vermelho claro */
+    color: #d32f2f; /* Vermelho escuro */
+    border-color: #ffcdd2;
+}
 
-  th, td {
-    padding: 10px;
-  }
-
-  button {
-    font-size: 14px;
-  }
+/* Animação de entrada suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

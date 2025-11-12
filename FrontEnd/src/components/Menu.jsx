@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Menu.css';
+import "../components/Menu.css";
+
+
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -12,9 +14,9 @@ const Menu = () => {
       
       <div className="menu-buttons">
         <button onClick={() => navigate('/cadastrar')}>Cadastrar Orçamento</button>
-        <button onClick={() => navigate('/listar')}>Listar Orçamentos</button>
-        <button onClick={() => navigate('/deletar')}>Deletar Orçamento</button>
-        <button onClick={() => navigate('/atualizar')}>Atualizar Orçamento</button>
+        <button onClick={() => navigate('/Atualizar')}>Buscar</button>
+        
+        
       </div>
     </div>
   );

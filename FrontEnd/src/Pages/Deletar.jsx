@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/global.css";
+
 
 const ListarOrcamentos = () => {
   const [orcamentos, setOrcamentos] = useState([]);

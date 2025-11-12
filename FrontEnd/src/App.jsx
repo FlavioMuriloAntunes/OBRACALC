@@ -4,12 +4,13 @@ import Cadastrar from "./Pages/Cadastrar";
 import Listar from "./Pages/Listar";
 import Deletar from "./Pages/Deletar";
 import Atualizar from "./Pages/Atualizar";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
   return (
     <Routes>
       {/* Página inicial */}
-      <Route path="/" element={<Menu />} />
+      <Route path="/" element={<Dashboard />} />
 
       {/* Páginas */}
       <Route path="/cadastrar" element={<Cadastrar />} />

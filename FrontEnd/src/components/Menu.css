@@ -1,25 +1,32 @@
+/* CONTAINER PRINCIPAL DO MENU LATERAL (Cor e Efeitos da Imagem Original) */
 .menu-box {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 40px 60px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  width: 90%;
-  animation: fadeIn 0.8s ease;
+  /* O azul dominante na imagem é um azul escuro. 
+     Vamos usar um azul mais escuro e sólido para o fundo do painel. */
+  background: #0a5da6; /* Cor de fundo azul principal do painel */
+  
+  /* Se houver um azul gradiente no fundo, defina-o no container pai ou aqui.
+     Para este elemento, vamos garantir a transparência no hover dos botões. */
+  
+  /* Removendo propriedades de layout problemáticas */
+  padding: 40px 20px; 
+  height: 100vh;
+  width: 250px; 
+  text-align: left;
 }
 
+/* Títulos e Subtítulos */
 .menu-title {
   font-size: 1.8rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 5px; 
+  color: white; /* Mantendo branco para contraste */
 }
 
 .menu-subtitle {
   font-size: 1rem;
-  color: #e0e0e0;
-  margin-bottom: 25px;
+  color: #c0dfff; /* Um azul bem claro, quase branco, para o subtítulo */
+  margin-bottom: 40px;
+  line-height: 1.4;
 }
 
 /* Botões */
@@ -30,7 +37,9 @@
 }
 
 .menu-buttons button {
-  background: #1e88e5;
+  /* Os botões na imagem têm um fundo mais claro, quase como se fosse uma 
+     sobreposição de branco semi-transparente sobre o azul do menu. */
+  background: rgba(255, 255, 255, 0.1); 
   color: white;
   border: none;
   border-radius: 10px;
@@ -39,29 +48,21 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .menu-buttons button:hover {
-  background: #1565c0;
-  transform: scale(1.05);
-}
-
-/* Animação de entrada */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* No hover, intensificamos a transparência para dar o efeito de clique. */
+  background: rgba(255, 255, 255, 0.25); 
+  transform: scale(1.02);
 }
 
 /* Responsivo */
 @media (max-width: 480px) {
   .menu-box {
-    padding: 30px 20px;
+    width: 100%;
+    height: auto;
+    padding: 20px;
   }
 
   .menu-buttons button {

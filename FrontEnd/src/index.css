@@ -1,26 +1,121 @@
-/* ===== Reset e base ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+/* ======= DASHBOARD - ESTILOS GERAIS ======= */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f7f9fb;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
 }
 
-body {
-  min-height: 100vh;
-  width: 100vw;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  background-attachment: fixed;
+/* ======= MENU LATERAL ======= */
+.dashboard-menu {
+  width: 260px;
+  background: linear-gradient(180deg, #004aad, #0073e6);
+  color: white;
+  padding: 2rem 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
+.listar-page {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+.listar-page h2 {
+  font-size: 1.8rem;
+  color: #004aad;
+  margin-bottom: 0.5rem;
+}
+
+.listar-page p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* ======= GARANTIR QUE O CARD DO FORM NÃO FIQUE BRANCO ======= */
+/* Regra mais específica para sobrescrever .page form de outro arquivo */
+.listar-page .page form {
+  background: #f5f5f5; /* cinza suave em vez de branco */
+}
+
+/* ======= TABELA DE ORÇAMENTOS ======= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5; /* trocado de #fff para #f5f5f5 */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+  background-color: #004aad;
   color: #fff;
 }
 
-/* Centraliza todo o conteúdo principal */
-.app-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+thead th {
+  text-align: left;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e8e8e8;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #eef5ff;
+}
+
+tbody td {
+  padding: 12px 18px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Caso sua página tenha cards/brancos feitos com .page sem estarem dentro de .listar-page,
+   você pode usar a regra abaixo (com !important) para forçar a mudança — use apenas se necessário. */
+/*
+.page form {
+  background: #f5f5f5 !important;
+}
+*/
+
+/* ======= SCROLL E AJUSTES ======= */
+.listar-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.listar-page::-webkit-scrollbar-thumb {
+  background-color: #004aad;
+  border-radius: 10px;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 900px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .dashboard-menu {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+
+  .listar-page {
+    padding: 1.5rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
 }
