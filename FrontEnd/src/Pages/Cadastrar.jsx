@@ -19,7 +19,7 @@ const Cadastrar = () => {
   const [mostrarResumo, setMostrarResumo] = useState(false);
   const [mensagem, setMensagem] = useState("");
 
-  // 🧮 Cálculo automático do valor total
+  // Cálculo automático do valor total
   useEffect(() => {
     const base = parseFloat(valor) || 0;
     const extras = parseFloat(custosExtras) || 0;
@@ -158,7 +158,7 @@ const Cadastrar = () => {
 
   return (
     <div className="page">
-      <h2>📝 Cadastrar Orçamento em Etapas</h2>
+      <h2>📝 Cadastrar Orçamento</h2>
 
       {mensagem && (
         <p
@@ -278,12 +278,7 @@ const Cadastrar = () => {
                         value={item.valorUnitario}
                         onChange={(e) => handleItemChange(indexAmb, indexItem, "valorUnitario", e.target.value)}
                       />
-                      <input
-                        type="text"
-                        placeholder="Unidade (ex: saco, m²)"
-                        value={item.unidade}
-                        onChange={(e) => handleItemChange(indexAmb, indexItem, "unidade", e.target.value)}
-                      />
+                      
                     </>
                   )}
 
